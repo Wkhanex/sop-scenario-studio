@@ -1,0 +1,4 @@
+interface:
+  display_name: "SOP Scenario Studio"
+  short_description: "Build local SOP scenarios and test action traces against role,"
+  default_prompt: "Use $build-sop-scenario on the local example in this repository."

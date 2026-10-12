@@ -1,0 +1,21 @@
+{
+  "name": "sop-scenario-studio",
+  "version": "0.1.0",
+  "description": "Build local SOP scenarios and test action traces against role, evidence and timing gates.",
+  "author": {
+    "name": "Waleed Khan"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "SOP Scenario Studio",
+    "shortDescription": "Build and simulate SOP worlds",
+    "longDescription": "Build local SOP scenarios and test action traces against role, evidence and timing gates.",
+    "developerName": "Waleed Khan",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": "Use $build-sop-scenario on the local example in this repository."
+  }
+}

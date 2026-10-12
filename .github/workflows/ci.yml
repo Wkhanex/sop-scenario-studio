@@ -1,0 +1,28 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e .
+      - run: python -m unittest discover -s tests -v
+      - run: python -m compileall -q sop_studio tests skills
+      - name: Example workflow
+        run: |
+          sop-studio build examples/world.json --output output/demo
+          sop-studio simulate examples/world.json examples/good-trace.json
